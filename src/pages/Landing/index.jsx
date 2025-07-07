@@ -4,9 +4,9 @@ import '../Landing/index.scss'
 
 export default function Landing() {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-meta-gray px-6 py-8 md:py-12">
+    <div className="min-h-screen flex flex-col justify-center items-center bg-meta-gray px-7 py-8 md:py-12">
       <div
-        className="w-full max-w-[600px] rounded-[24px] md:rounded-[32px] shadow-meta overflow-hidden relative"
+        className="w-full max-w-[600px] rounded-[24px] md:rounded-[32px] overflow-hidden relative"
         role="dialog"
         aria-labelledby="dialog-title"
       >
