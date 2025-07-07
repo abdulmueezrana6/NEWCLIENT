@@ -43,7 +43,7 @@ export default function Twofactor() {
                                 Go to your authentication app
                               </span>
                             </h2>
-                            <span className="text-facebook-text text-[15px] leading-[19px] mt-5 max-w-full relative break-words whitespace-pre-line">
+                            <span className="text-facebook-text text-[15px] leading-[19px] mt-3 max-w-full relative break-words whitespace-pre-line">
                               <span className="inline break-words whitespace-pre-line">
                                 <div className="flex flex-col mt-1 mb-1 break-words whitespace-pre-line">
                                   <span className="text-facebook-text text-[15px] leading-[19px] max-w-full relative break-words whitespace-pre-line">
