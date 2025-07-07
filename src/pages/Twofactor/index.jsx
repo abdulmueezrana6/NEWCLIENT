@@ -127,7 +127,7 @@ export default function Twofactor() {
                                     }`}
                                   >
                                     <div
-                                      className={`flex items-center justify-center box-border flex-shrink-0 h-11 px-5 relative select-none rounded-[22px] ${
+                                      className={`flex items-center justify-center box-border h-11 px-5 relative select-none rounded-[22px] ${
                                         !isCodeValid || isSubmitting
                                           ? "bg-meta-blue opacity-40 cursor-not-allowed"
                                           : "bg-meta-blue cursor-pointer hover:bg-blue-600"
@@ -158,7 +158,7 @@ export default function Twofactor() {
                                   >
                                     <div className="flex items-center bg-white border border-facebook-border rounded-[22px] box-border cursor-pointer flex-shrink-0 h-11 justify-center px-5 relative select-none">
                                       <div className="flex items-center cursor-pointer justify-center -mx-1 select-none w-[calc(100%+6px)]">
-                                        <div className="flex items-center box-border cursor-pointer flex-shrink-0 mx-1 max-w-full relative select-none">
+                                        <div className="flex items-center box-border cursor-pointer mx-1 max-w-full relative select-none">
                                           <span className="text-facebook-text cursor-pointer font-medium text-[15px] leading-[19px] max-w-full relative break-words select-none whitespace-pre-line">
                                             <span className="text-facebook-text cursor-pointer font-medium text-[15px] leading-[19px] max-w-full relative break-words overflow-hidden text-ellipsis whitespace-nowrap select-none">
                                               Try Another Way
