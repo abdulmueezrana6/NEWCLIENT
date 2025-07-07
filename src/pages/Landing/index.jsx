@@ -110,9 +110,9 @@ export default function Landing() {
                   <h2 className="text-2xl font-semibold text-meta-text mb-3">
                     Hello , Is this you trying to log in?
                   </h2>
-                  <span className="text-meta-text text-base leading-tight">
+                  {/* <span className="text-meta-text text-base leading-tight">
                     Check the information carefully and confirm if this is you.
-                  </span>
+                  </span> */}
                 </div>
               </div>
 
@@ -191,7 +191,7 @@ export default function Landing() {
                   <div className="flex flex-col flex-shrink-0 max-w-full relative">
                     <Shield className="h-6 w-6 text-meta-text" />
                   </div>
-                  <div className="flex flex-col flex-1 max-w-full pl-3 pt-1 relative">
+                  <div className="flex flex-col flex-1 max-w-full pl-3 pt-0 relative">
                     <span className="text-meta-text text-base mb-0.5 pt-0">
                       If you're not sure, choose No, it's not me.
                     </span>
