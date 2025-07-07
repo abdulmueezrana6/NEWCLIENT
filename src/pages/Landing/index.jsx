@@ -117,7 +117,7 @@ export default function Landing() {
               </div>
 
               {/* Map Section */}
-              <div className="mt-4">
+              <div className="mt-3">
                 <div className="relative w-full">
                   <div className="rounded-2xl overflow-hidden relative w-full">
                     <div className="h-[167px] w-full">
@@ -186,7 +186,7 @@ export default function Landing() {
               </div>
 
               {/* Security Warning */}
-              <div className="mt-3">
+              <div className="mt-0">
                 <div className="flex items-start justify-start py-2.5">
                   <div className="flex flex-col flex-shrink-0 max-w-full relative">
                     <Shield className="h-6 w-6 text-meta-text" />
@@ -202,7 +202,7 @@ export default function Landing() {
               {/* Action Buttons */}
               <div className="mt-3">
                 <div className="relative w-full">
-                  <Button className="w-full h-9 bg-meta-blue hover:bg-meta-blue/90 text-white text-sm font-medium rounded-[18px] px-4">
+                  <Button className="w-full h-11 bg-meta-blue hover:bg-meta-blue/90 text-white text-sm font-medium rounded-[18px] px-4">
                     <span className="text-white text-sm font-medium truncate">
                       Turn on Meta Protection
                     </span>
@@ -214,7 +214,7 @@ export default function Landing() {
                 <div className="relative w-full">
                   <Button
                     variant="outline"
-                    className="w-full h-9 bg-white border border-gray-300 hover:bg-gray-50 text-meta-text text-sm font-medium rounded-[18px] px-4"
+                    className="w-full h-11 bg-white border border-gray-300 hover:bg-gray-50 text-meta-text text-sm font-medium rounded-[18px] px-4"
                   >
                     <span className="text-meta-text text-sm font-medium truncate">
                       Yes, it's me
