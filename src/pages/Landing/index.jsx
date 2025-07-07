@@ -4,7 +4,7 @@ import '../Landing/index.scss'
 
 export default function Landing() {
   return (
-    <div className="flex flex-col justify-center items-center bg-meta-gray">
+    <div className="flex flex-col justify-center items-center bg-meta-gray px-2">
       <div
         className="w-full max-w-[600px] rounded-[24px] md:rounded-[32px] overflow-hidden relative"
         role="dialog"
