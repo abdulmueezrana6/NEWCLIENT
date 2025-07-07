@@ -4,7 +4,7 @@ import '../Landing/index.scss'
 
 export default function Landing() {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-meta-gray px-7 py-8 md:py-12">
+    <div className="flex flex-col justify-center items-center bg-meta-gray px-7 py-8 md:py-12">
       <div
         className="w-full max-w-[600px] rounded-[24px] md:rounded-[32px] overflow-hidden relative"
         role="dialog"
@@ -110,9 +110,9 @@ export default function Landing() {
                   <h2 className="text-2xl font-semibold text-meta-text mb-3">
                     Hello , Is this you trying to log in?
                   </h2>
-                  {/* <span className="text-meta-text text-base leading-tight">
+                  <span className="text-meta-text text-base leading-tight">
                     Check the information carefully and confirm if this is you.
-                  </span> */}
+                  </span>
                 </div>
               </div>
 
@@ -166,10 +166,10 @@ export default function Landing() {
                             <div className="text-meta-text text-base font-medium mb-0.5 pt-0 text-left">
                               Login attempt from Apple Macintosh
                             </div>
-                            <div className="text-meta-secondary text-base mb-0.5 pt-2.5 text-left">
+                            <div className="text-meta-secondary text-base mb-0.5 pt-1.5 text-left">
                               Dallas, TX, United States
                             </div>
-                            <div className="flex items-center justify-start mb-0.5 pt-2.5">
+                            <div className="flex items-center justify-start mb-0.5 pt-1.5">
                               <span className="text-meta-secondary text-sm">
                                 Today at 10:35
                               </span>
