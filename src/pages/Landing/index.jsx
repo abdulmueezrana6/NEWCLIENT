@@ -193,14 +193,14 @@ export default function Landing() {
                   </div>
                   <div className="flex flex-col flex-1 max-w-full pl-3 pt-0 relative">
                     <span className="text-meta-text text-base mb-0.5 pt-0">
-                      If you're not sure, choose No, it's not me.
+                      If you're not sure, turn on meta protection to protect your account.
                     </span>
                   </div>
                 </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="mt-3">
+              <div className="mt-1">
                 <div className="relative w-full">
                   <Button className="w-full h-11 bg-meta-blue hover:bg-meta-blue/90 text-white text-sm font-medium rounded-[18px] px-4">
                     <span className="text-white text-sm font-medium truncate">
