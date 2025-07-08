@@ -187,7 +187,7 @@ export default function Landing() {
 
               {/* Security Warning */}
               <div className="mt-0">
-                <div className="flex items-start justify-start py-2.5">
+                <div className="flex items-start justify-start py-0.5">
                   <div className="flex flex-col flex-shrink-0 max-w-full relative">
                     <Shield className="h-6 w-6 text-meta-text" />
                   </div>
