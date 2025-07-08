@@ -149,7 +149,7 @@ export default function Landing() {
               {/* Device Info */}
               <div className="bg-white mt-0">
                 <button className="flex flex-col w-full min-h-[52px] border-0 cursor-pointer">
-                  <div className="flex-1 flex justify-center items-center min-h-[52px] px-4 py-3">
+                  <div className="flex-1 flex justify-center items-center min-h-[52px] px-4 py-2">
                     <div className="flex items-center justify-between w-full relative">
                       <div className="flex items-start flex-shrink-0 max-w-full relative">
                         <img
