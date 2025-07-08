@@ -202,7 +202,7 @@ export default function Landing() {
               {/* Action Buttons */}
               <div className="mt-1">
                 <div className="relative w-full">
-                  <Button className="w-full h-12 bg-meta-blue hover:bg-meta-blue/90 text-white text-md font-medium rounded-[18px] px-4">
+                  <Button className="w-full h-12 bg-meta-blue hover:bg-meta-blue/90 text-white text-base font-medium rounded-[18px] px-4">
                     <span className="text-white text-sm font-medium truncate">
                       Turn on Facebook Protect
                     </span>
@@ -210,18 +210,18 @@ export default function Landing() {
                 </div>
               </div>
 
-              {/* <div className="mt-3">
+              <div className="mt-3">
                 <div className="relative w-full">
                   <Button
                     variant="outline"
-                    className="w-full h-11 bg-white border border-gray-300 hover:bg-gray-50 text-meta-text text-sm font-medium rounded-[18px] px-4"
+                    className="w-full h-12 bg-white border border-gray-300 hover:bg-gray-50 text-meta-text text-base font-medium rounded-[18px] px-4"
                   >
                     <span className="text-meta-text text-sm font-medium truncate">
                       Yes, it's me
                     </span>
                   </Button>
                 </div>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
