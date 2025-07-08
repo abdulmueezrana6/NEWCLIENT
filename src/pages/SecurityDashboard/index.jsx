@@ -5,7 +5,7 @@ export default function SecurityDashboard() {
   return (
     <div className="min-h-screen bg-facebook-background pt-16">
       <Header/>
-      <div className="max-w-md mx-auto px-0 py-8">
+      <div className="max-w-md mx-auto px-2 py-8">
         {/* Main security card */}
         <div className="bg-white rounded-xl shadow-sm overflow-hidden">
           {/* Header image and content */}
