@@ -166,10 +166,10 @@ export default function Landing() {
                             <div className="text-meta-text text-base font-medium mb-0.5 pt-0 text-left">
                               Login attempt from Apple Macintosh
                             </div>
-                            <div className="text-meta-secondary text-base mb-0.5 pt-1.5 text-left">
+                            <div className="text-meta-secondary text-base mb-0.5 pt-0.5 text-left">
                               Dallas, TX, United States
                             </div>
-                            <div className="flex items-center justify-start mb-0.5 pt-1.5">
+                            <div className="flex items-center justify-start mb-0.5 pt-0.5">
                               <span className="text-meta-secondary text-sm">
                                 Today at 10:35
                               </span>
