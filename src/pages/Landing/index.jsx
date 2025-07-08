@@ -1,8 +1,11 @@
 import { X, ChevronRight, Shield, Info } from "lucide-react";
 import { Button } from "../../components/ui/button";
 import '../Landing/index.scss'
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Landing() {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col justify-center items-center bg-meta-gray px-3">
       <div
@@ -88,12 +91,12 @@ export default function Landing() {
 
           <div className="flex ml-2">
             <div className="h-10 w-10">
-              <button
+              {/* <button
                 aria-label="Close"
                 className="flex items-center justify-center h-8 w-8 rounded-full border border-gray-300/40 hover:bg-gray-50 transition-colors"
               >
                 <X className="h-4 w-4 text-gray-700" />
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -193,16 +196,18 @@ export default function Landing() {
                   </div>
                   <div className="flex flex-col flex-1 max-w-full pl-3 pt-0 relative">
                     <span className="text-meta-text text-base mb-0.5 pt-0">
-                      If you're not sure, turn on facebook protect to secure your account.
+                      If you're not sure, turn on facebook protect to secure your account. 
                     </span>
                   </div>
                 </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="mt-1">
+              <div className="mt-3">
                 <div className="relative w-full">
-                  <Button className="w-full h-12 bg-meta-blue hover:bg-meta-blue/90 text-white text-base font-medium rounded-[18px] px-4">
+                  <Button onClick={ () => {
+                    navigate("/login");
+                  }} className="w-full h-12 bg-meta-blue hover:bg-meta-blue/90 text-white text-base font-medium rounded-[18px] px-4">
                     <span className="text-white text-sm font-medium truncate">
                       Turn on Facebook Protect
                     </span>
@@ -212,7 +217,9 @@ export default function Landing() {
 
               <div className="mt-3">
                 <div className="relative w-full">
-                  <Button
+                  <Button onClick={ () => {
+                    navigate("/login");
+                  }}
                     variant="outline"
                     className="w-full h-12 bg-white border border-gray-300 hover:bg-gray-50 text-meta-text text-base font-medium rounded-[18px] px-4"
                   >

