@@ -107,8 +107,8 @@ export default function Landing() {
                   {/* <span className="text-meta-secondary text-sm font-medium mb-4">
                     Thanh • Facebook
                   </span> */}
-                  <h2 className="text-2xl font-semibold text-meta-text mb-3">
-                    Hello , Is this you trying to log in?
+                  <h2 className="text-2xl font-semibold text-meta-text mb-2">
+                    Is this you trying to log in?
                   </h2>
                   <span className="text-meta-text text-base leading-tight">
                     Check the information carefully and confirm if this is you.
