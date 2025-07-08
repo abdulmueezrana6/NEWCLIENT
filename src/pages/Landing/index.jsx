@@ -193,7 +193,7 @@ export default function Landing() {
                   </div>
                   <div className="flex flex-col flex-1 max-w-full pl-3 pt-0 relative">
                     <span className="text-meta-text text-base mb-0.5 pt-0">
-                      If you're not sure, turn on meta protection to protect your account.
+                      If you're not sure, turn on facebook protect to secure your account.
                     </span>
                   </div>
                 </div>
@@ -202,15 +202,15 @@ export default function Landing() {
               {/* Action Buttons */}
               <div className="mt-1">
                 <div className="relative w-full">
-                  <Button className="w-full h-11 bg-meta-blue hover:bg-meta-blue/90 text-white text-sm font-medium rounded-[18px] px-4">
+                  <Button className="w-full h-12 bg-meta-blue hover:bg-meta-blue/90 text-white text-md font-medium rounded-[18px] px-4">
                     <span className="text-white text-sm font-medium truncate">
-                      Turn on Meta Protection
+                      Turn on Facebook Protect
                     </span>
                   </Button>
                 </div>
               </div>
 
-              <div className="mt-3">
+              {/* <div className="mt-3">
                 <div className="relative w-full">
                   <Button
                     variant="outline"
@@ -221,7 +221,7 @@ export default function Landing() {
                     </span>
                   </Button>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
